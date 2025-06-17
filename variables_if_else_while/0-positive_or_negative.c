@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
 /**
  *  main - Entry point
  *  Description : This program assign a random number
