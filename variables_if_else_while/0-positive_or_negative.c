@@ -2,8 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 /* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ *  main - Entry point
+ *  Description : This program assign a random number
+ *  the variable n each time it is executed.
+ *  Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
