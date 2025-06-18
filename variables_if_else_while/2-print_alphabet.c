@@ -8,6 +8,12 @@
 int main(void)
 
 {
-	puts("abcdefghijklmnopqrstuvwxyz");
+	char	l;
+
+	for(l = 'a'; l <= 'z'; l++)
+	{
+		putchar(l);
+	}
+	putchar('\n');
 	return (0);
 }
