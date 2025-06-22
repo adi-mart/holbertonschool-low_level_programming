@@ -8,18 +8,36 @@
  */
 void print_to_98(int n)
 {
-	n = 0;
-
-	while (n < 98)
+	while (n != 98)
 	{
-		write(1, &n, 1);
-		write(1, ", ", 2);
-		n++;
+		if (n < 98)
+			n++;
+		else
+			n--;
+		if (n < 0)
+		{
+			_putchar('-');
+			if (-n >= 100)
+				_putchar((-n / 100) + '0');
+			if (-n >= 10)
+				_putchar(((-n / 10) % 10) + '0');
+			_putchar((-(n % 10)) + '0');
+		}
+		else
+		{
+			if (n >= 100)
+				_putchar((n / 100) + '0');
+			if (n >= 10)
+				_putchar(((n / 10) % 10) + '0');
+			_putchar((n % 10) + '0');
+		}
+		_putchar(',');
+		_putchar(' ');
 	}
-	while (n > 98)
+	if (n == 98)
 	{
-		write(1, &n, 1);
-		write(1, ", ", 2);
-		n--;
+		_putchar('9');
+		_putchar('8');
+		_putchar('\n');
 	}
 }
