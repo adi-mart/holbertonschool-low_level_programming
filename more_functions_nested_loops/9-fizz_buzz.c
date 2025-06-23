@@ -22,9 +22,9 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
-		putchar (' ');	
+		putchar (' ');
 	}
-	printf("Fizz Buzz");
+	printf("Buzz");
 	putchar('\n');
 	return (0);
 }
