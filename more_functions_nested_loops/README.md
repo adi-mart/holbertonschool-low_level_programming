@@ -1,0 +1,1 @@
+this directory contains more fonctions in C
