@@ -31,4 +31,5 @@ int _atoi(char *s)
 			i++;
 	}
 	return (resultat * signe);
+	return (0);
 }
