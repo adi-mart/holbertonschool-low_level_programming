@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 /**
  * _atoi - converts a string to an integer
  * @s: the string to convert
@@ -15,8 +16,6 @@ int _atoi(char *s)
 	i = 0;
 	signe = 1;
 	resultat = 0;
-	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
-		i++;
 	while (s[i] == '+' || s[i] == '-')
 	{
 		if (s[i] == '-')
@@ -28,7 +27,11 @@ int _atoi(char *s)
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		resultat = resultat * 10 + (s[i] - '0');
-			i++;
+			if (resultat > INT_MAX && signe == 1)
+			return (INT_MAX);
+		if (resultat < INT_MIN && signe == -1)
+			return (INT_MIN);
+		i++;
 	}
 	return (resultat * signe);
 	return (0);
