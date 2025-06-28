@@ -17,19 +17,23 @@ int _atoi(char *s)
 	signe = 1;
 	resultat = 0;
 
-	while (s[i] < '0' || s[i] > '9')
+	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
 			signe *= -1;
-		i++;
-	}
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		resultat = resultat * 10 + (s[i] - '0');
-		if (resultat > INT_MAX)
-			return (INT_MAX);
-		if (-resultat < INT_MIN)
-			return (INT_MIN);
+		else if (s[i] >= '0' && s[i] <= '9')
+		{
+			while (s[i] >= '0' && s[i] <= '9')
+			{
+				if (signe == 1 && resultat < 0)
+					return (INT_MAX);
+				if (signe == -1 && -resultat > 0)
+					return (INT_MIN);
+				resultat = resultat * 10 + (s[i] - '0');
+				i++;
+			}
+			break;
+		}
 		i++;
 	}
 	return (signe * resultat);
