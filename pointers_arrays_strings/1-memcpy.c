@@ -9,7 +9,6 @@
  * Description: This function copies n bytes from the memory area pointed
  * to by src to the memory area pointed to by dest. The memory areas must
  * not overlap.
- *
  * Return: pointer to the destination memory area dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
