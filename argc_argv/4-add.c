@@ -17,22 +17,27 @@ int main(int argc, char **argv)
 	int somme;
 
 	i = 1;
-	j = 1;
 	somme = 0;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 
 	while (i < argc)
 	{
-		if (!(argv[i][0] >= '0' && argv[i][0] <= '9'))
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			printf("Error\n");
-			return (1);
+			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
 		}
-		j = atoi(argv[i]);
-		if (j == 0)
-		{
-			return (0);
-		}
-		somme = somme + j;
+		somme = somme + atoi(argv[i]);
 		i++;
 	}
 	printf("%d\n", somme);
