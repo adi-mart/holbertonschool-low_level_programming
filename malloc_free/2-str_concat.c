@@ -22,25 +22,19 @@ char *str_concat(char *s1, char *s2)
 	int len1;
 	int len2;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	len1 = strlen(s1);
 	len2 = strlen(s2);
-	if (s1 == NULL)
-		return ("");
-	if (s2 == NULL)
-		return ("");
-
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
-		j++;
 
 	str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	i = 0;
-	j = 0;
 
 	while (s1[i] != '\0')
 	{
@@ -49,9 +43,10 @@ char *str_concat(char *s1, char *s2)
 	}
 	while (s2[j] != '\0')
 	{
-		str[i + j] = s2[j];
+		str[i] = s2[j];
+		i++;
 		j++;
 	}
-	str[i + j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
