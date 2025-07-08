@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include "main.h"
 /**
  * string_nconcat - concatenates two strings up to n bytes from s2
@@ -34,7 +32,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2++;
 
 	if (n >= len2)
+	{
 		str = malloc(sizeof(char) * (len1 + len2 + 1));
+	}
 	else
 	{
 		str = malloc(sizeof(char) * (len1 + n + 1));
