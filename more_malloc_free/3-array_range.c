@@ -15,10 +15,12 @@ int *array_range(int min, int max)
 	i = 0;
 	if (min >= max)
 		return (NULL);
-	tab = malloc(sizeof(int) * (max - min));
+	tab = malloc(sizeof(int) * (max - min + 1));
 	if (tab == NULL)
+	{
 		return (NULL);
-	while (min < max)
+	}
+	while (min <= max)
 	{
 		tab[i] = min;
 		i++;
