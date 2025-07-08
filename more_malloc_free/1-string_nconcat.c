@@ -6,13 +6,10 @@
  * @s2: second string
  * @n: number of bytes to concatenate from s2
  *
- * Description: This function allocates memory for a new string,
- * concatenates the first string with the first n bytes of the second string,
- * and returns a pointer to the new string.
- *
  * Return: pointer to the concatenated string, or NULL if memory
  * allocation fails
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
