@@ -17,6 +17,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
+	chmod(filename, 0664);
+
 	if (text_content)
 	{
 		while (text_content[len])
@@ -30,5 +32,5 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	}
 	close(fd);
-		return (1);
+	return (1);
 }
