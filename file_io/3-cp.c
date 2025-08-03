@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 		close(file_from);
 		exit(99);
 	}
-	fchmod(fd_to, 0664);
 	while ((r = read(file_from, buf, BUF_SIZE)) > 0)
 	{
 		w = write(fd_to, buf, r);
